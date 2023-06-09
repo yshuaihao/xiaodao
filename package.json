@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "serve:dev": "nodemon --watch 'serve/**/*.ts' --exec ts-node serve/src/index.ts",
+    "serve:build": "tsc -p serve",
+    "serve:start": "node serve/dist/index.js"
   },
   "dependencies": {
     "ant-design-vue": "^3.2.20",
@@ -14,9 +17,11 @@
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },
+  "type": "module",
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@types/koa": "^2.13.6",
+    "@types/koa-router": "^7.4.4",
     "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
