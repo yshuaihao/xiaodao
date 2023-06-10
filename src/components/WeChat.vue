@@ -34,12 +34,8 @@ const msg = ref('')
 const handleClick = async () => {
   list.value.push({ content: msg.value, flag: false })
   try {
-    const result = await get('/api.php', {
-      key: 'free',
-      appid: 0,
-      msg: msg.value
-    })
-    list.value.push({ content: '' + result, flag: true })
+    const result: any = await get('/chat')
+    list.value.push({ content: result.content, flag: true })
   } catch (e) {
     console.log('请求失败')
   }
