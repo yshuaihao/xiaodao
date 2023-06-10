@@ -16,17 +16,34 @@
       </ul>
     </div>
     <div class="chat-input">
-      <input type="text" id="message-input" placeholder="Type your message..." />
-      <button id="send-button">Send</button>
+      <input type="text" v-model="msg" placeholder="Type your message..." />
+      <button @click="handleClick">Send</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const list = [
+import { ref } from 'vue'
+import { get } from '@/utils/request'
+const list = ref([
   { content: 'Hello', flag: false },
   { content: 'Hello', flag: true }
-]
+])
+const msg = ref('')
+
+const handleClick = async () => {
+  list.value.push({ content: msg.value, flag: false })
+  try {
+    const result = await get('/api.php', {
+      key: 'free',
+      appid: 0,
+      msg: msg.value
+    })
+    list.value.push({ content: '' + result, flag: true })
+  } catch (e) {
+    console.log('请求失败')
+  }
+}
 </script>
 
 <style lang="scss">

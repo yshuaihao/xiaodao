@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'http://api.qingyunke.com/api.php',
+  baseURL: 'http://api.qingyunke.com',
+  withCredentials: true,
   timeout: 10000
 })
 

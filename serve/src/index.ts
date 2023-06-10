@@ -1,5 +1,6 @@
 import Koa from 'koa'
 import Router from 'koa-router'
+import axios from 'axios'
 const port = 8000
 const app = new Koa()
 const router = new Router()
@@ -10,6 +11,18 @@ router.get('/home', async (ctx) => {
 
 router.get('/login', async (ctx) => {
   ctx.response.body = '<h1>Login</h1>'
+})
+
+router.get('/chat', async (ctx) => {
+  try {
+    const response = await axios.get('http://api.qingyunke.com/api.php?key=free&appid=0&msg=你好')
+    const data = response.data
+    ctx.body = data
+  } catch (error) {
+    console.error(error)
+    ctx.status = 500
+    ctx.body = 'Internal Server Error'
+  }
 })
 
 app.use(router.routes())
