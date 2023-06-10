@@ -4,7 +4,7 @@
 
 ### 技术栈
 
-Vue3 + TS + Ant Design + Koa2
+Vue3 + TS + Ant Design + Axios + Koa2
 
 ### API
 

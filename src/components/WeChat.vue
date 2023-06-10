@@ -24,8 +24,8 @@
 
 <script setup lang="ts">
 const list = [
-  { content: 'Hello', flag: true },
-  { content: 'Hello', flag: false }
+  { content: 'Hello', flag: false },
+  { content: 'Hello', flag: true }
 ]
 </script>
 
