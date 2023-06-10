@@ -25,6 +25,14 @@
 <script setup lang="ts">
 const list = [
   { content: 'Hello', flag: true },
+  { content: 'Hello', flag: false },
+  { content: 'Hello', flag: true },
+  { content: 'Hello', flag: false },
+  { content: 'Hello', flag: true },
+  { content: 'Hello', flag: false },
+  { content: 'Hello', flag: true },
+  { content: 'Hello', flag: false },
+  { content: 'Hello', flag: true },
   { content: 'Hello', flag: false }
 ]
 </script>
@@ -55,7 +63,8 @@ const list = [
 
 .chat-messages {
   flex-grow: 1;
-  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   ul {
     padding: 0;
@@ -126,6 +135,10 @@ const list = [
   &-user {
     float: right;
   }
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
 }
 
 .chat-input {
