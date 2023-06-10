@@ -24,10 +24,7 @@
 
 <script setup lang="ts">
 const list = [
-  {
-    content: 'Hello',
-    flag: true
-  },
+  { content: 'Hello', flag: true },
   { content: 'Hello', flag: false }
 ]
 </script>
@@ -76,6 +73,12 @@ const list = [
     div {
       position: relative;
     }
+  }
+
+  li::after {
+    content: '';
+    display: table;
+    clear: both;
   }
 
   img {
