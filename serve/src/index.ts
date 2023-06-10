@@ -22,7 +22,8 @@ router.get('/login', async (ctx) => {
 
 router.get('/chat', async (ctx) => {
   try {
-    const response = await axios.get('http://api.qingyunke.com/api.php?key=free&appid=0&msg=你好')
+    const { msg } = ctx.query
+    const response = await axios.get(`http://api.qingyunke.com/api.php?key=free&appid=0&msg=${msg}`)
     const data = response.data
     ctx.body = data
   } catch (error) {

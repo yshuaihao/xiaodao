@@ -31,10 +31,17 @@ const list = ref([
 ])
 const msg = ref('')
 
+interface ResultType {
+  errno: number
+  content: string
+}
+
 const handleClick = async () => {
   list.value.push({ content: msg.value, flag: false })
   try {
-    const result: any = await get('/chat')
+    const result = (await get('/chat', {
+      msg: msg.value
+    })) as ResultType
     list.value.push({ content: result.content, flag: true })
   } catch (e) {
     console.log('请求失败')
