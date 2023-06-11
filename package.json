@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "ant-design-vue": "^3.2.20",
+    "axios": "^1.4.0",
+    "koa2-cors": "^2.0.6",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -22,6 +24,7 @@
     "@types/jest": "^27.0.1",
     "@types/koa": "^2.13.6",
     "@types/koa-router": "^7.4.4",
+    "@types/koa2-cors": "^2.0.2",
     "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
