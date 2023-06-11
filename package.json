@@ -3,19 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "serve:dev": "nodemon --watch 'serve/**/*.ts' --exec ts-node serve/src/index.ts",
+    "serve:build": "tsc -p serve",
+    "serve:start": "node serve/dist/index.js"
   },
   "dependencies": {
     "ant-design-vue": "^3.2.20",
+    "axios": "^1.4.0",
+    "koa2-cors": "^2.0.6",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },
+  "type": "module",
   "devDependencies": {
     "@types/jest": "^27.0.1",
+    "@types/koa": "^2.13.6",
+    "@types/koa-router": "^7.4.4",
+    "@types/koa2-cors": "^2.0.2",
+    "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
@@ -37,10 +47,14 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.3",
     "jest": "^27.0.5",
+    "koa": "^2.14.2",
+    "koa-router": "^12.0.0",
+    "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "ts-jest": "^27.0.4",
+    "ts-node": "^10.9.1",
     "typescript": "~4.5.5"
   }
 }
