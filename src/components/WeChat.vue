@@ -15,25 +15,36 @@
         </li>
       </ul>
     </div>
+    <div>
+      <span @click="handleHistoryRecord">历史记录占位</span>
+    </div>
     <div class="chat-input">
       <input type="text" v-model="msg" placeholder="Type your message..." />
       <button @click="handleClick">Send</button>
     </div>
   </div>
+  <HistoryRecord ref="historyRecord"></HistoryRecord>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { get } from '@/utils/request'
+import HistoryRecord from '@/components/HistoryRecord/HistoryRecord.vue'
+
 const list = ref([
   { content: 'Hello', flag: false },
   { content: 'Hello', flag: true }
 ])
 const msg = ref('')
+const historyRecord = ref()
 
 interface ResultType {
   errno: number
   content: string
+}
+
+const handleHistoryRecord = () => {
+  historyRecord.value.show()
 }
 
 const handleClick = async () => {
