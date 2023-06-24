@@ -20,13 +20,16 @@
     "koa2-cors": "^2.0.6",
     "mongodb": "^5.6.0",
     "mysql2": "^3.3.5",
+    "qrcode-terminal": "^0.12.0",
     "ts-node-dev": "^2.0.0",
     "tsc-alias": "^1.8.6",
     "tslib": "^2.5.3",
     "typeorm": "^0.3.16",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "wechaty": "^1.20.2",
+    "wechaty-puppet-wechat": "^1.18.4"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",

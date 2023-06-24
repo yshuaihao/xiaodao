@@ -4,6 +4,7 @@ node_modules
 /serve/dist
 
 pnpm-lock.yaml
+wechaty-bot.memory-card.json
 
 # local env files
 .env.local
