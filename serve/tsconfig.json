@@ -1,42 +1,31 @@
+// https://blog.csdn.net/qq_44831027/article/details/108150470
+
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "strict": true,
+    "target": "es6", // 目标语言的版本
+    "module": "commonjs", // 生成代码的模板标准
+    // "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node", // 模块解析策略，ts默认用node的解析策略，即相对的方式导入
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true, // 允许export=导出，由import from 导入
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
-    "sourceMap": true,
+    // "forceConsistentCasingInFileNames": true,
+    // "useDefineForClassFields": true,
+    "sourceMap": true, // 生成目标文件的sourceMap文件
     "baseUrl": ".",
-    "types": [
-      "webpack-env",
-      "jest"
-    ],
+    // "types": ["webpack-env", "jest"],
+    // "types": ["node"],
+    "allowJs": true, // 允许编译器编译JS，JSX文件
+    "outDir": "./dist", // 指定输出目录
+    "experimentalDecorators": true, // 装饰器
+    "emitDecoratorMetadata": true, //
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ],
-    "outDir": "./dist"
+    "typeRoots": ["src/types", "node_modules/@types"]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "ts-node": {
-    "esm": true
-  }
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
