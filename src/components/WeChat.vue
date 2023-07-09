@@ -27,7 +27,15 @@ import { ref } from 'vue'
 import { get } from '@/utils/request'
 const list = ref([
   { content: 'Hello', flag: false },
-  { content: 'Hello', flag: true }
+  { content: 'Hello', flag: true },
+  { content: '天气', flag: false },
+  { content: '正在查询天气信息，请稍后......', flag: true },
+  { content: '聊天气泡', flag: false },
+  {
+    content:
+      'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    flag: true
+  }
 ])
 const msg = ref('')
 
@@ -51,15 +59,15 @@ const handleClick = async () => {
 
 <style lang="scss">
 .chat-container {
-  width: 400px;
+  width: 800px;
   height: 600px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 55%;
+  top: 30%;
   transform: translate(-50%, -50%);
 }
 
