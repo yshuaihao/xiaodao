@@ -73,7 +73,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   width: 500px;
   position: absolute;
