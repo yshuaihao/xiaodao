@@ -24,7 +24,7 @@ import { Search } from '@element-plus/icons-vue'
 <style lang="scss" scoped>
 .container {
   height: 60px;
-  background-color: aqua;
+  border-bottom: 1px solid #ccc;
 
   &__logo {
     height: 60px;

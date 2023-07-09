@@ -1,6 +1,6 @@
 <template>
   <el-row class="tac">
-    <el-menu>
+    <el-menu default-active="3-1">
       <el-sub-menu index="1">
         <template #title>
           <el-icon><Location /></el-icon>
@@ -19,6 +19,8 @@
           <el-icon><Document /></el-icon>
           <span>列表页</span>
         </template>
+        <el-menu-item index="3-1">对话管理</el-menu-item>
+        <el-menu-item index="3-2">机器人管理</el-menu-item>
       </el-sub-menu>
       <el-sub-menu index="4">
         <template #title>
