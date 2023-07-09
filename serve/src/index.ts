@@ -1,10 +1,20 @@
 import Koa from 'koa'
-import Router from 'koa-router'
 import cors from 'koa2-cors'
-import axios from 'axios'
-const port = 8000
+import { koaBody } from 'koa-body'
+
+import dotenv from 'dotenv'
+
+/** 通用配置文件 */
+import { BaseConfig } from './config'
+/** 路由管理文件 */
+import { initRoutes } from './routes'
+
+/** 加载 env 文件 */
+dotenv.config({ path: `${process.cwd()}/.env.${process.env.NODE_ENV}` })
+
 const app = new Koa()
-const router = new Router()
+
+/** cors 跨域 -> #TODO 黑白名单？ */
 app.use(
   cors({
     origin: 'http://localhost:8080',
@@ -12,27 +22,12 @@ app.use(
   })
 )
 
-router.get('/home', async (ctx) => {
-  ctx.response.body = '<h1>hello koa HOME</h1>'
-})
+/** post 处理，文件上传 -> 暂时不写 */
+app.use(koaBody())
 
-router.get('/login', async (ctx) => {
-  ctx.response.body = '<h1>Login</h1>'
-})
+/** 路由注册 */
+initRoutes(app)
 
-router.get('/chat', async (ctx) => {
-  try {
-    const { msg } = ctx.query
-    const response = await axios.get(`http://api.qingyunke.com/api.php?key=free&appid=0&msg=${msg}`)
-    const data = response.data
-    ctx.body = data
-  } catch (error) {
-    console.error(error)
-    ctx.status = 500
-    ctx.body = 'Internal Server Error'
-  }
+app.listen(BaseConfig.PORT, async () => {
+  console.log(`App is running at http://localhost:${BaseConfig.PORT}`)
 })
-
-app.use(router.routes())
-app.listen(port)
-console.log(`Serve started at port ${port}~`)
