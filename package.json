@@ -7,29 +7,16 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "serve:dev": "cross-env NODE_ENV=development ts-node-dev --project ./serve/tsconfig.json -r tsconfig-paths/register --respawn serve/src/index.ts",
-    "serve:build": "rm -rf serve/dist && tsc --project serve/tsconfig.json && tsc-alias -p serve/tsconfig.json",
+    "serve:dev": "nodemon --watch 'serve/**/*.ts' --exec ts-node serve/src/index.ts",
+    "serve:build": "tsc -p serve",
     "serve:start": "node serve/dist/index.js"
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "cross-env": "^7.0.3",
-    "dotenv": "^16.2.0",
-    "element-plus": "^2.3.7",
-    "koa-body": "^6.0.1",
     "koa2-cors": "^2.0.6",
-    "mongodb": "^5.6.0",
-    "mysql2": "^3.3.5",
-    "qrcode-terminal": "^0.12.0",
-    "ts-node-dev": "^2.0.0",
-    "tsc-alias": "^1.8.6",
-    "tslib": "^2.5.3",
-    "typeorm": "^0.3.16",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0",
-    "wechaty": "^1.20.2",
-    "wechaty-puppet-wechat": "^1.18.4"
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
