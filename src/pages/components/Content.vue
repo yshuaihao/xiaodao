@@ -3,5 +3,5 @@
 </template>
 
 <script lang="ts" setup>
-import WeChat from '@/components/WeChat.vue'
+import WeChat from '@/components/wechat.vue'
 </script>
