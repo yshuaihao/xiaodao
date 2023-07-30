@@ -1,7 +1,3 @@
 <template>
-  <WeChat />
+  <router-view></router-view>
 </template>
-
-<script lang="ts" setup>
-import WeChat from '@/components/WeChat.vue'
-</script>

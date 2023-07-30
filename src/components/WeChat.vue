@@ -57,7 +57,7 @@ const handleClick = async () => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .chat-container {
   width: 800px;
   height: 600px;
@@ -67,7 +67,7 @@ const handleClick = async () => {
   flex-direction: column;
   position: absolute;
   left: 55%;
-  top: 30%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
